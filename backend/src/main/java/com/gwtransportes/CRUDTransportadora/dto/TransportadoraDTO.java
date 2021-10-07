@@ -18,6 +18,11 @@ public class TransportadoraDTO implements Serializable {
 	private Long celular;
 	private Long whatsapp;
 	private Long numero;
+	private String rua;
+	private String bairro;
+	private String cidade;
+	private String estado;
+	private Long cep;
 	
 	private List<ModalDTO> modals = new ArrayList<>();
 	
@@ -26,8 +31,7 @@ public class TransportadoraDTO implements Serializable {
 	}
 
 	public TransportadoraDTO(Long id, String email, String nome, String empresa, Long telefone, Long celular,
-			Long whatsapp, Long numero, List<ModalDTO> modals) {
-		super();
+			Long whatsapp, Long numero, List<ModalDTO> modals, String rua, String bairro, String cidade, String estado, Long cep) {
 		this.id = id;
 		this.email = email;
 		this.nome = nome;
@@ -37,6 +41,11 @@ public class TransportadoraDTO implements Serializable {
 		this.whatsapp = whatsapp;
 		this.numero = numero;
 		this.modals = modals;
+		this.rua = rua;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.cep = cep;
 	}
 	
 	public TransportadoraDTO(Transportadora entity) {
@@ -48,6 +57,11 @@ public class TransportadoraDTO implements Serializable {
 		this.celular = entity.getCelular();
 		this.whatsapp = entity.getWhatsapp();
 		this.numero = entity.getNumero();
+		this.rua = entity.getRua();
+		this.bairro = entity.getBairro();
+		this.cidade = entity.getCidade();
+		this.estado = entity.getEstado();
+		this.cep = entity.getCep();
 		
 	}
 	
@@ -128,6 +142,47 @@ public class TransportadoraDTO implements Serializable {
 	public void setModals(List<ModalDTO> modals) {
 		this.modals = modals;
 	}
+
+	public String getRua() {
+		return rua;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public Long getCep() {
+		return cep;
+	}
+
+	public void setCep(Long cep) {
+		this.cep = cep;
+	}
+	
 	
 	
 	

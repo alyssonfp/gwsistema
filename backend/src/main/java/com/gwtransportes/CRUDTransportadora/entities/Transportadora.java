@@ -29,6 +29,11 @@ public class Transportadora implements Serializable{
 	private Long celular;
 	private Long whatsapp;
 	private Long numero;
+	private String rua;
+	private String bairro;
+	private String cidade;
+	private String estado;
+	private Long cep;
 	
 	@ManyToMany
 	@JoinTable(name = "tb_transportadora_modal", joinColumns = @JoinColumn(name = "transportadora_id"), inverseJoinColumns = @JoinColumn(name = "modal_id"))
@@ -39,7 +44,7 @@ public class Transportadora implements Serializable{
 	}
 
 	public Transportadora(Long id, String email, String nome, String empresa, Long telefone, Long celular,
-			Long whatsapp, Long numero) {
+			Long whatsapp, Long numero, String rua, String bairro, String cidade, String estado, Long cep) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -49,6 +54,11 @@ public class Transportadora implements Serializable{
 		this.celular = celular;
 		this.whatsapp = whatsapp;
 		this.numero = numero;
+		this.rua = rua;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.cep = cep;
 	}
 
 	public Long getId() {
@@ -113,6 +123,55 @@ public class Transportadora implements Serializable{
 
 	public void setNumero(Long numero) {
 		this.numero = numero;
+	}
+	
+
+	public String getRua() {
+		return rua;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public Long getCep() {
+		return cep;
+	}
+
+	public void setCep(Long cep) {
+		this.cep = cep;
+	}
+
+	public Set<Modal> getModals() {
+		return modals;
+	}
+
+	public void setModals(Set<Modal> modals) {
+		this.modals = modals;
 	}
 
 	@Override
